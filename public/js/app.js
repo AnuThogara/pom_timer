@@ -13,7 +13,7 @@
 
     function startTimer() {
 
-        if (timerInterval) {
+        if (!timerInterval) {
             timerInterval = setInterval(countdown, 1000);
         }
         // add condition
