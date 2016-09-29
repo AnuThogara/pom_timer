@@ -4,17 +4,31 @@
 
         var seconds = $('#seconds');
         var minutes = $('#minutes');
+        var timerInterval;
         // main functionaility
 
-        startButton.on('click', countdown);
+        startButton.on('click', startTimer);
 
+
+        function startTimer(){
+          if(!timerInterval){
+            timerInterval = setInterval(countdown , 1000);
+          }
+          
+        }
 
         //function definition
+
         function countdown() {
             var secondsText = seconds.text();
             var secondsTextAsNumber = parseInt(secondsText);
             var minutesText = minutes.text();
             var minutesTextAsNumber = parseInt(minutesText);
+
+            if(minutesTextAsNumber === 0 && secondsTextAsNumber === 0)
+            {
+              return;
+            }
             if (secondsTextAsNumber === 0) {
                 if (minutesTextAsNumber !== 0) {
                     var decreasedMinutesAsNumberByOne = minutesTextAsNumber - 1;
