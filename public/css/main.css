@@ -3,5 +3,9 @@
 }
 #start{
  /*margin-top: 100px;*/
-  font-size: 700%;
+  font-size: 750%;
+}
+#break{
+  font-size: 750%;
+  display: none;
 }
